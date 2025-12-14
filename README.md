@@ -1,4 +1,4 @@
-ESN과 유전 알고리즘을 활용한 하이브리드 주가 예측 모델
+프로젝트명 : ESN과 유전 알고리즘을 활용한 하이브리드 주가 예측 모델
 금융 시계열 데이터는 노이즈가 심하고 비선형적이라 예측이 참 어렵습니다. 기존의 고정된 기술적 지표나 단순 딥러닝 모델만으로는 급변하는 시장 상황(Regime)에 유연하게 대처하기 힘들다는 문제의식에서 이 프로젝트를 시작했습니다.
 
 이 프로젝트는 CPM(Critical Point Method)으로 노이즈를 걷어내고, 유전 알고리즘(GA)으로 최적화된 지표를 **ESN(Echo State Network)**에 학습시켜, 수익률뿐만 아니라 위험(MDD)까지 관리하는 안정적인 자동 매매 시스템을 구현한 결과물입니다.
@@ -34,10 +34,10 @@ Python
 import yfinance as yf
 from CV_ESN7 import esn_rolling_forward
 
-# 예: 존슨앤존슨(JNJ) 데이터 가져오기
+ 예: 존슨앤존슨(JNJ) 데이터 가져오기
 df = yf.Ticker("JNJ").history(start='2015-07-22', end='2025-07-22')
 
-# 롤링 포워드 검증 실행
+ 롤링 포워드 검증 실행
 best_params, returns = esn_rolling_forward(
     df=df,
     n_splits=5,        # 5개 구간으로 나누어 검증
